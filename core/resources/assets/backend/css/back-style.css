@@ -1,0 +1,48 @@
+@import url("https://rsms.me/inter/inter.css");
+
+/**
+Antialiasing
+ */
+.antialiased {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.subpixel-antialiased {
+    -webkit-font-smoothing: auto;
+    -moz-osx-font-smoothing: auto;
+}
+
+.draggable {
+    cursor: grab !important;
+}
+
+.drag-handle {
+    cursor: grab !important;
+    font-size: 1.3rem !important;
+    padding: 0 10px !important;
+    user-select: none !important;
+    display: flex !important;
+    align-items: center !important;
+}
+
+.input-group.dragging,
+.card.dragging {
+    opacity: 0.6 !important;
+    border: 1px dashed #0d6efd !important;
+}
+
+.ui-state-highlight {
+    border: 2px dashed #007bff !important;
+    height: 60px !important;
+    margin-bottom: 10px !important;
+    background: #f8f9fa !important;
+}
+
+.ts-dropdown-content {
+    background: #fff !important;
+}
+
+div[style*="z-index:9999"][style*="position:relative"] {
+display: none !important;
+}

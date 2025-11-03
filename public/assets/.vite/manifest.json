@@ -1,0 +1,244 @@
+{
+  "_vendor-BtKflHRL.js": {
+    "file": "chunks/vendor-BtKflHRL.js",
+    "name": "vendor"
+  },
+  "_vendor-jquery-CUgmfaAf.js": {
+    "file": "chunks/vendor-jquery-CUgmfaAf.js",
+    "name": "vendor-jquery"
+  },
+  "resources/assets/backend/css/back-style.css": {
+    "file": "backend/back-style-T0t8UGgz.js",
+    "name": "backend/back-style",
+    "src": "resources/assets/backend/css/back-style.css",
+    "isEntry": true,
+    "css": [
+      "backend/theme-Bqz7obX8.css"
+    ]
+  },
+  "resources/assets/backend/css/back-vendors.css": {
+    "file": "backend/back-vendors-T0t8UGgz.js",
+    "name": "backend/back-vendors",
+    "src": "resources/assets/backend/css/back-vendors.css",
+    "isEntry": true,
+    "css": [
+      "backend/theme-Bqz7obX8.css"
+    ]
+  },
+  "resources/assets/backend/css/jquery-ui.css": {
+    "file": "backend/jquery-ui-T0t8UGgz.js",
+    "name": "backend/jquery-ui",
+    "src": "resources/assets/backend/css/jquery-ui.css",
+    "isEntry": true,
+    "css": [
+      "backend/theme-Bqz7obX8.css"
+    ]
+  },
+  "resources/assets/backend/css/theme.css": {
+    "file": "backend/theme-Bqz7obX8.css",
+    "src": "resources/assets/backend/css/theme.css",
+    "isEntry": true
+  },
+  "resources/assets/backend/js/dashboard.js": {
+    "file": "backend/dashboard-J0_oOCFc.js",
+    "name": "backend/dashboard",
+    "src": "resources/assets/backend/js/dashboard.js",
+    "isEntry": true,
+    "imports": [
+      "_vendor-jquery-CUgmfaAf.js",
+      "resources/assets/backend/js/main.js"
+    ]
+  },
+  "resources/assets/backend/js/main.js": {
+    "file": "backend/main-BXklAV5R.js",
+    "name": "backend/main",
+    "src": "resources/assets/backend/js/main.js",
+    "isEntry": true,
+    "imports": [
+      "_vendor-jquery-CUgmfaAf.js"
+    ]
+  },
+  "resources/assets/frontend/css/dark-theme.css": {
+    "file": "frontend/dark-theme-AjoBWekB.js",
+    "name": "frontend/dark-theme",
+    "src": "resources/assets/frontend/css/dark-theme.css",
+    "isEntry": true,
+    "css": [
+      "frontend/style-Br9hVPSW.css"
+    ],
+    "assets": [
+      "fonts/boxicons-CASQlNmZ.eot",
+      "fonts/boxicons-D-9kh4JX.woff2",
+      "fonts/boxicons-BRXHbA3Z.woff",
+      "fonts/boxicons-BDxpaK7B.ttf",
+      "images/boxiconsd41d-Cv8c-MCu.svg",
+      "fonts/LineIcons-BJUrqD8W.eot",
+      "fonts/LineIcons-BZgAh_1U.woff2",
+      "fonts/LineIcons-DrihXZZM.woff",
+      "fonts/LineIcons-Cqb3QtOe.ttf",
+      "images/LineIcons--A_6HXRF.svg",
+      "images/ajax-loader-BcnMEykj.gif",
+      "images/slick-BlzDm7g2.svg"
+    ]
+  },
+  "resources/assets/frontend/css/icons.css": {
+    "file": "frontend/icons-AjoBWekB.js",
+    "name": "frontend/icons",
+    "src": "resources/assets/frontend/css/icons.css",
+    "isEntry": true,
+    "css": [
+      "frontend/style-Br9hVPSW.css"
+    ],
+    "assets": [
+      "fonts/boxicons-CASQlNmZ.eot",
+      "fonts/boxicons-D-9kh4JX.woff2",
+      "fonts/boxicons-BRXHbA3Z.woff",
+      "fonts/boxicons-BDxpaK7B.ttf",
+      "images/boxiconsd41d-Cv8c-MCu.svg",
+      "fonts/LineIcons-BJUrqD8W.eot",
+      "fonts/LineIcons-BZgAh_1U.woff2",
+      "fonts/LineIcons-DrihXZZM.woff",
+      "fonts/LineIcons-Cqb3QtOe.ttf",
+      "images/LineIcons--A_6HXRF.svg",
+      "images/ajax-loader-BcnMEykj.gif",
+      "images/slick-BlzDm7g2.svg"
+    ]
+  },
+  "resources/assets/frontend/css/style.css": {
+    "file": "frontend/style-Br9hVPSW.css",
+    "src": "resources/assets/frontend/css/style.css",
+    "isEntry": true
+  },
+  "resources/assets/frontend/fonts/LineIcons.eot": {
+    "file": "fonts/LineIcons-BJUrqD8W.eot",
+    "src": "resources/assets/frontend/fonts/LineIcons.eot"
+  },
+  "resources/assets/frontend/fonts/LineIcons.svg": {
+    "file": "images/LineIcons--A_6HXRF.svg",
+    "src": "resources/assets/frontend/fonts/LineIcons.svg"
+  },
+  "resources/assets/frontend/fonts/LineIcons.ttf": {
+    "file": "fonts/LineIcons-Cqb3QtOe.ttf",
+    "src": "resources/assets/frontend/fonts/LineIcons.ttf"
+  },
+  "resources/assets/frontend/fonts/LineIcons.woff": {
+    "file": "fonts/LineIcons-DrihXZZM.woff",
+    "src": "resources/assets/frontend/fonts/LineIcons.woff"
+  },
+  "resources/assets/frontend/fonts/LineIcons.woff2": {
+    "file": "fonts/LineIcons-BZgAh_1U.woff2",
+    "src": "resources/assets/frontend/fonts/LineIcons.woff2"
+  },
+  "resources/assets/frontend/fonts/boxicons.eot": {
+    "file": "fonts/boxicons-CASQlNmZ.eot",
+    "src": "resources/assets/frontend/fonts/boxicons.eot"
+  },
+  "resources/assets/frontend/fonts/boxicons.ttf": {
+    "file": "fonts/boxicons-BDxpaK7B.ttf",
+    "src": "resources/assets/frontend/fonts/boxicons.ttf"
+  },
+  "resources/assets/frontend/fonts/boxicons.woff": {
+    "file": "fonts/boxicons-BRXHbA3Z.woff",
+    "src": "resources/assets/frontend/fonts/boxicons.woff"
+  },
+  "resources/assets/frontend/fonts/boxicons.woff2": {
+    "file": "fonts/boxicons-D-9kh4JX.woff2",
+    "src": "resources/assets/frontend/fonts/boxicons.woff2"
+  },
+  "resources/assets/frontend/fonts/boxiconsd41d.svg": {
+    "file": "images/boxiconsd41d-Cv8c-MCu.svg",
+    "src": "resources/assets/frontend/fonts/boxiconsd41d.svg"
+  },
+  "resources/assets/frontend/js/index.js": {
+    "file": "frontend/index-e8aUOMDl.js",
+    "name": "frontend/index",
+    "src": "resources/assets/frontend/js/index.js",
+    "isEntry": true,
+    "imports": [
+      "resources/assets/frontend/js/main.js"
+    ]
+  },
+  "resources/assets/frontend/js/loader.js": {
+    "file": "frontend/loader-e8aUOMDl.js",
+    "name": "frontend/loader",
+    "src": "resources/assets/frontend/js/loader.js",
+    "isEntry": true,
+    "imports": [
+      "resources/assets/frontend/js/main.js"
+    ]
+  },
+  "resources/assets/frontend/js/main.js": {
+    "file": "frontend/main-B-Zog2-s.js",
+    "name": "frontend/main",
+    "src": "resources/assets/frontend/js/main.js",
+    "isEntry": true
+  },
+  "resources/assets/frontend/plugins/slick/ajax-loader.gif": {
+    "file": "images/ajax-loader-BcnMEykj.gif",
+    "src": "resources/assets/frontend/plugins/slick/ajax-loader.gif"
+  },
+  "resources/assets/frontend/plugins/slick/fonts/slick.svg": {
+    "file": "images/slick-BlzDm7g2.svg",
+    "src": "resources/assets/frontend/plugins/slick/fonts/slick.svg"
+  },
+  "resources/assets/frontend/plugins/slick/slick-theme.css": {
+    "file": "frontend/slick-theme-AjoBWekB.js",
+    "name": "frontend/slick-theme",
+    "src": "resources/assets/frontend/plugins/slick/slick-theme.css",
+    "isEntry": true,
+    "css": [
+      "frontend/style-Br9hVPSW.css"
+    ],
+    "assets": [
+      "fonts/boxicons-CASQlNmZ.eot",
+      "fonts/boxicons-D-9kh4JX.woff2",
+      "fonts/boxicons-BRXHbA3Z.woff",
+      "fonts/boxicons-BDxpaK7B.ttf",
+      "images/boxiconsd41d-Cv8c-MCu.svg",
+      "fonts/LineIcons-BJUrqD8W.eot",
+      "fonts/LineIcons-BZgAh_1U.woff2",
+      "fonts/LineIcons-DrihXZZM.woff",
+      "fonts/LineIcons-Cqb3QtOe.ttf",
+      "images/LineIcons--A_6HXRF.svg",
+      "images/ajax-loader-BcnMEykj.gif",
+      "images/slick-BlzDm7g2.svg"
+    ]
+  },
+  "resources/assets/frontend/plugins/slick/slick.css": {
+    "file": "frontend/slick-AjoBWekB.js",
+    "name": "frontend/slick",
+    "src": "resources/assets/frontend/plugins/slick/slick.css",
+    "isEntry": true,
+    "css": [
+      "frontend/style-Br9hVPSW.css"
+    ],
+    "assets": [
+      "fonts/boxicons-CASQlNmZ.eot",
+      "fonts/boxicons-D-9kh4JX.woff2",
+      "fonts/boxicons-BRXHbA3Z.woff",
+      "fonts/boxicons-BDxpaK7B.ttf",
+      "images/boxiconsd41d-Cv8c-MCu.svg",
+      "fonts/LineIcons-BJUrqD8W.eot",
+      "fonts/LineIcons-BZgAh_1U.woff2",
+      "fonts/LineIcons-DrihXZZM.woff",
+      "fonts/LineIcons-Cqb3QtOe.ttf",
+      "images/LineIcons--A_6HXRF.svg",
+      "images/ajax-loader-BcnMEykj.gif",
+      "images/slick-BlzDm7g2.svg"
+    ]
+  },
+  "resources/css/app.css": {
+    "file": "default/style-ClKuW648.css",
+    "src": "resources/css/app.css",
+    "isEntry": true
+  },
+  "resources/js/app.js": {
+    "file": "default/app-CtuZkcuQ.js",
+    "name": "default/app",
+    "src": "resources/js/app.js",
+    "isEntry": true,
+    "imports": [
+      "_vendor-BtKflHRL.js"
+    ]
+  }
+}
