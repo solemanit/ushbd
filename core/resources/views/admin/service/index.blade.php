@@ -1,6 +1,6 @@
 @extends('admin.layouts.master')
 
-@section('title', 'Categories | UpSkill Academia')
+@section('title', 'Services | USHBD')
 
 @section('content')
     <div class="page-header d-print-none" aria-label="Page header">
@@ -8,14 +8,13 @@
             <div class="row g-2 align-items-center">
                 <div class="col-auto ms-auto d-print-none">
                     <div class="btn-list">
-                        <a href="{{ route('admin.categories.create') }}" class="btn btn-primary btn-5 d-sm-inline-block">
+                        <a href="{{ route('admin.services.create') }}" class="btn btn-primary btn-5 d-sm-inline-block">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                 viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round"
-                                class="icon icon-2">
+                                stroke-linecap="round" stroke-linejoin="round" class="icon icon-2">
                                 <path d="M12 5v14M5 12h14" />
                             </svg>
-                            Add Category
+                            Add Service
                         </a>
                     </div>
                 </div>
@@ -47,8 +46,8 @@
                             <div class="card-header">
                                 <div class="w-full row">
                                     <div class="col">
-                                        <h3 class="mb-0 card-title fw-bold">Categories</h3>
-                                        <p class="m-0 text-secondary">All created categories</p>
+                                        <h3 class="mb-0 card-title fw-bold">Services</h3>
+                                        <p class="m-0 text-secondary">All created services</p>
                                     </div>
                                     <div class="col-md-auto col-sm-12">
                                         <div class="flex-wrap ms-auto d-flex btn-list">
@@ -77,7 +76,7 @@
                                             <tr>
                                                 <th>
                                                     <button class="table-sort d-flex justify-content-between w-100"
-                                                        data-sort="sort-name">Category Name</button>
+                                                        data-sort="sort-title">Service Title</button>
                                                 </th>
                                                 <th>Image</th>
                                                 <th>
@@ -89,52 +88,32 @@
                                         </thead>
 
                                         <tbody class="table-tbody list">
-                                            @foreach ($categories as $category)
+                                            @foreach ($services as $service)
                                                 <tr>
-                                                    <td class="sort-name">{{ $category->name }}</td>
+                                                    <td class="sort-title">{{ $service->title }}</td>
+
                                                     <td>
-                                                        @if($category->image)
-                                                            <img src="{{ asset('storage/' . $category->image) }}"
-                                                                alt="{{ $category->name }}"
+                                                        @if($service->image)
+                                                            <img src="{{ asset('storage/' . $service->image) }}"
+                                                                alt="{{ $service->title }}"
                                                                 class="rounded img-thumbnail"
                                                                 style="max-width: 120px;">
                                                         @else
                                                             <span class="text-muted">No Image</span>
                                                         @endif
                                                     </td>
-                                                    <td class="sort-date">{{ $category->created_at->format('Y-m-d') }}</td>
+
+                                                    <td class="sort-date">{{ $service->created_at->format('Y-m-d') }}</td>
+
                                                     <td>
-                                                        <a href="{{ route('admin.categories.edit', $category->id) }}"
+                                                        <a href="{{ route('admin.services.edit', $service->id) }}"
                                                             class="btn btn-sm btn-primary">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24"
-                                                                height="24" viewBox="0 0 24 24" fill="none"
-                                                                stroke="currentColor" stroke-width="2"
-                                                                stroke-linecap="round" stroke-linejoin="round"
-                                                                class="icon icon-tabler icon-tabler-edit">
-                                                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                                                <path
-                                                                    d="M7 7h-1a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-1" />
-                                                                <path
-                                                                    d="M20.385 6.585a2.1 2.1 0 0 0 -2.97 -2.97l-8.415 8.385v3h3l8.385 -8.415z" />
-                                                                <path d="M16 5l3 3" />
-                                                            </svg> Edit
+                                                            Edit
                                                         </a> |
                                                         <button class="btn btn-danger btn-sm"
                                                             data-bs-toggle="modal"
                                                             data-bs-target="#deleteModal"
-                                                            data-url="{{ route('admin.categories.destroy', $category->id) }}">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24"
-                                                                height="24" viewBox="0 0 24 24" fill="none"
-                                                                stroke="currentColor" stroke-width="2"
-                                                                stroke-linecap="round" stroke-linejoin="round"
-                                                                class="icon icon-tabler icon-tabler-trash-x">
-                                                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                                                <path d="M4 7h16" />
-                                                                <path
-                                                                    d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" />
-                                                                <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" />
-                                                                <path d="M10 12l4 4m0 -4l-4 4" />
-                                                            </svg>
+                                                            data-url="{{ route('admin.services.destroy', $service->id) }}">
                                                             Delete
                                                         </button>
                                                     </td>
@@ -152,19 +131,8 @@
                                                     @csrf
                                                     @method('DELETE')
                                                     <div class="py-4 text-center modal-body">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24"
-                                                            height="24" viewBox="0 0 24 24" fill="none"
-                                                            stroke="currentColor" stroke-width="2"
-                                                            stroke-linecap="round" stroke-linejoin="round"
-                                                            class="mb-2 icon text-danger icon-lg">
-                                                            <path d="M12 9v4"></path>
-                                                            <path
-                                                                d="M10.363 3.591l-8.106 13.534a1.914 1.914 0 0 0 1.636 2.871h16.214a1.914 1.914 0 0 0 1.636 -2.87l-8.106 -13.536a1.914 1.914 0 0 0 -3.274 0z">
-                                                            </path>
-                                                            <path d="M12 16h.01"></path>
-                                                        </svg>
                                                         <h5 class="modal-title">Are you sure?</h5>
-                                                        <p>Do you really want to delete this category?<br> This action cannot be undone.</p>
+                                                        <p>Do you really want to delete this service?<br> This action cannot be undone.</p>
                                                     </div>
                                                     <div class="modal-footer">
                                                         <button type="button" class="btn btn-secondary"
@@ -182,65 +150,34 @@
                                             deleteModal.addEventListener('show.bs.modal', function(event) {
                                                 var button = event.relatedTarget;
                                                 var url = button.getAttribute('data-url');
-                                                var form = deleteModal.querySelector('#deleteForm');
-                                                form.action = url;
+                                                document.getElementById('deleteForm').action = url;
                                             });
                                         });
                                     </script>
                                 </div>
+
                                 <div class="card-footer d-flex align-items-center">
-                                    <div class="dropdown">
-                                        <a class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                                            <span id="page-count" class="me-1">10</span> <span>records</span>
-                                        </a>
-                                        <div class="dropdown-menu">
-                                            <a class="dropdown-item" onclick="setPageListItems(event)" data-value="10">10 records</a>
-                                            <a class="dropdown-item" onclick="setPageListItems(event)" data-value="20">20 records</a>
-                                            <a class="dropdown-item" onclick="setPageListItems(event)" data-value="50">50 records</a>
-                                            <a class="dropdown-item" onclick="setPageListItems(event)" data-value="100">100 records</a>
-                                        </div>
-                                    </div>
                                     <ul class="m-0 pagination ms-auto"></ul>
                                 </div>
+
                             </div>
                         </div>
                     </div>
 
                     <script>
-                        const advancedTable = {
-                            headers: [
-                                {"data-sort": "sort-name", name: "Category Name"},
-                                {"data-sort": "sort-date", name: "Created Date"}
-                            ]
-                        };
+                        const list = new List("advanced-table", {
+                            sortClass: "table-sort",
+                            listClass: "table-tbody",
+                            page: 10,
+                            pagination: true,
+                            valueNames: ["sort-title", "sort-date"]
+                        });
 
-                        const setPageListItems = (e) => {
-                            const perPage = parseInt(e.target.dataset.value);
-                            const list = window.tabler_list["advanced-table"];
-                            list.page = perPage;
-                            list.update();
-                            document.querySelector("#page-count").textContent = e.target.dataset.value;
-                        };
-
-                        window.tabler_list = window.tabler_list || {};
-
-                        document.addEventListener("DOMContentLoaded", function() {
-                            const list = (window.tabler_list["advanced-table"] = new List("advanced-table", {
-                                sortClass: "table-sort",
-                                listClass: "table-tbody",
-                                page: 10,
-                                pagination: true,
-                                valueNames: advancedTable.headers.map((header) => header["data-sort"])
-                            }));
-
-                            const searchInput = document.querySelector("#advanced-table-search");
-                            if (searchInput) {
-                                searchInput.addEventListener("input", () => {
-                                    list.search(searchInput.value);
-                                });
-                            }
+                        document.querySelector("#advanced-table-search").addEventListener("input", (e) => {
+                            list.search(e.target.value);
                         });
                     </script>
+
                 </div>
             </div>
         </div>

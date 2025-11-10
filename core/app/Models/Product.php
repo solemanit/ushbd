@@ -14,15 +14,14 @@ class Product extends Model
      * যেসব ফিল্ড mass assignment এ অনুমোদিত
      */
     protected $fillable = [
-        'category_id',
+        'service_id',
+        'brand_id',
         'division_id',
         'district_id',
         'name',
         'description',
         'slug',
         'image',
-        'price',
-        'discount',
         'status',
     ];
 
@@ -46,12 +45,18 @@ class Product extends Model
         });
     }
 
-    /**
-     * category সম্পর্ক (belongsTo)
-     */
-    public function category()
+    public function brand()
     {
-        return $this->belongsTo(Category::class);
+        return $this->belongsTo(Brand::class);
+    }
+
+
+    /**
+     * service সম্পর্ক (belongsTo)
+     */
+    public function service()
+    {
+        return $this->belongsTo(Service::class);
     }
 
     /**

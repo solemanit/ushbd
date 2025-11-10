@@ -1,42 +1,42 @@
 @extends('admin.layouts.master')
 
-@section('title', 'Edit Category | UpSkill Academia')
+@section('title', 'Edit Service | USHBD')
 
 @section('content')
 <div class="mt-5 container-xl">
     <div class="card">
         <div class="card-header">
-            <h3>Edit Category</h3>
+            <h3>Edit Service</h3>
         </div>
         <div class="card-body">
-            <form method="POST" action="{{ route('admin.categories.update', $category->id) }}" enctype="multipart/form-data">
+            <form method="POST" action="{{ route('admin.services.update', $service->id) }}" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
 
                 <div class="mt-3">
-                    <label for="name" class="form-label">Category Name:</label>
-                    <input type="text" id="name" name="name"
-                        class="form-control @error('name') is-invalid @enderror"
-                        value="{{ old('name', $category->name) }}"
-                        placeholder="Enter category name">
-                    @error('name')
+                    <label for="title" class="form-label">Service Title:</label>
+                    <input type="text" id="title" name="title"
+                        class="form-control @error('title') is-invalid @enderror"
+                        value="{{ old('title', $service->title) }}"
+                        placeholder="Enter service title">
+                    @error('title')
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
                 </div>
 
                 <div class="mt-3">
-                    <label for="image" class="form-label">Category Image:</label>
+                    <label for="image" class="form-label">Service Image:</label>
                     <input type="file" id="image" name="image"
                         class="form-control @error('image') is-invalid @enderror">
                     @error('image')
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
 
-                    @if($category->image)
+                    @if($service->image)
                         <div class="mt-3">
                             <p class="mb-1 fw-semibold">Current Image:</p>
-                            <img src="{{ asset('storage/' . $category->image) }}"
-                                 alt="Current Category Image"
+                            <img src="{{ asset('storage/' . $service->image) }}"
+                                 alt="Current Service Image"
                                  class="rounded img-thumbnail"
                                  style="max-width: 300px;">
                         </div>
@@ -53,7 +53,7 @@
                         <circle cx="12" cy="14" r="2" />
                         <path d="M14 4v4h-8v-4z" />
                     </svg>
-                    Update Category
+                    Update Service
                 </button>
             </form>
         </div>

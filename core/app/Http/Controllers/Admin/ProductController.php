@@ -3,8 +3,9 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Category;
+use App\Models\Brand;
 use App\Models\Product;
+use App\Models\Service;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
@@ -21,21 +22,22 @@ class ProductController extends Controller
 
     public function create()
     {
-        $categories = Category::all();
-        return view('admin.product.create', compact('categories'));
+        $brands     = Brand::all();
+        $services   = Service::all();
+
+        return view('admin.product.create', compact('brands', 'services'));
     }
 
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'category_id'  => 'required|exists:categories,id',
+            'brand_id'     => 'nullable|exists:brands,id',
+            'service_id'   => 'nullable|exists:services,id',
             'division_id'  => 'nullable|integer',
             'district_id'  => 'nullable|integer',
             'name'         => 'required|string|max:255',
             'description'  => 'required|string',
             'image'        => 'required|image|mimes:jpg,jpeg,png,webp|max:2048',
-            'price'        => 'required|integer|min:0',
-            'discount'     => 'nullable|integer|min:0',
             'status'       => 'required|in:0,1',
         ]);
 
@@ -61,21 +63,21 @@ class ProductController extends Controller
 
     public function edit(Product $product)
     {
-        $categories = Category::all();
-        return view('admin.product.edit', compact('product', 'categories'));
+        $brands     = Brand::all();
+        $services   = Service::all();
+        return view('admin.product.edit', compact('product', 'brands', 'services'));
     }
 
     public function update(Request $request, Product $product)
     {
         $validated = $request->validate([
-            'category_id'  => 'required|exists:categories,id',
+            'brand_id'     => 'nullable|exists:brands,id',
+            'service_id'   => 'nullable|exists:services,id',
             'division_id'  => 'required|integer',
             'district_id'  => 'required|integer',
             'name'         => 'required|string|max:255',
             'description'  => 'required|string',
             'image'        => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
-            'price'        => 'required|integer|min:0',
-            'discount'     => 'nullable|integer|min:0',
             'status'       => 'required|in:0,1',
         ]);
 
@@ -121,7 +123,7 @@ class ProductController extends Controller
         $manager = new ImageManager(new Driver());
 
         $resizedImage = $manager->read($image)
-            ->cover(480, 270)
+            ->cover(500, 500)
             ->toWebp(80);
 
         Storage::disk('public')->put($filename, $resizedImage);

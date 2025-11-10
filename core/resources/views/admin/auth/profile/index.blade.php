@@ -1,6 +1,6 @@
 @extends('admin.layouts.master')
 
-@section('title', 'Admin Users | UpSkill Academia')
+@section('title', 'Admin Users | USHBD')
 
 @section('content')
     <div class="page-header d-print-none" aria-label="Page header">

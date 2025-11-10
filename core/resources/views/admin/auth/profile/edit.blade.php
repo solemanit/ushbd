@@ -1,11 +1,11 @@
 @extends('admin.layouts.master')
 
-@section('title', 'Edit Admin | UpSkill Academia')
+@section('title', 'Edit Admin | USHBD')
 
 @section('content')
 <div class="page-body">
     <div class="container-xl">
-        <div class="row row-cards mt-5">
+        <div class="mt-5 row row-cards">
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
@@ -39,7 +39,7 @@
                             </div>
 
                             @if(auth('admin')->user()->role === 'admin')
-                                <div class="row mt-3">
+                                <div class="mt-3 row">
                                     <div class="col-md-6">
                                         <label for="role" class="form-label">Role:</label>
                                         <select name="role" id="role" class="form-select @error('role') is-invalid @enderror" required>
@@ -57,7 +57,7 @@
                             @endif
 
 
-                            <div class="row mt-3">
+                            <div class="mt-3 row">
                                 <div class="col-md-6">
                                     <label for="password" class="form-label">Password:</label>
                                     <input type="password" id="password" name="password" placeholder="Leave blank to keep unchanged"
@@ -81,7 +81,7 @@
                                     <input class="form-check-input" type="checkbox" name="status" value="1" {{ old('status', $admin->status) ? 'checked' : '' }}>
                                     <span class="form-check-label">Active</span>
                                 </label>
-                                @error('status') <div class="text-danger mt-1">{{ $message }}</div> @enderror
+                                @error('status') <div class="mt-1 text-danger">{{ $message }}</div> @enderror
                             </div>
 
 

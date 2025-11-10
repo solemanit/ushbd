@@ -8,7 +8,7 @@
             <div class="container">
                 <div class="px-3 py-2 mb-4 border d-flex align-items-center">
                     <div class="text-start">
-                        <h4 class="mb-0 h4 fw-bold">Billing Details</h4>
+                        <h4 class="mb-0 h4 fw-bold">Order Details</h4>
                     </div>
                 </div>
 
@@ -94,42 +94,6 @@
                                 <button type="submit" class="px-5 py-3 btn btn-dark btn-ecomm">Confirm Order</button>
                             </div>
                         </form>
-                    </div>
-
-                    <!-- Order Summary -->
-                    <div class="col-12 col-lg-4 col-xl-4">
-                        <div class="mb-3 card rounded-0">
-                            <div class="card-body">
-                                <h5 class="mb-4 fw-bold">Order Summary</h5>
-
-                                <div class="hstack align-items-center justify-content-between">
-                                    <p class="mb-0">{{ $product->name }}</p>
-                                    <p class="mb-0 fw-bold">৳{{ $price }}</p>
-                                </div>
-                                <hr>
-                                <div class="hstack align-items-center justify-content-between">
-                                    <p class="mb-0">Discount</p>
-                                    <p class="mb-0 text-success">
-                                        @if ($product->discount > 0)
-                                            - ৳{{ $product->discount }}
-                                        @else
-                                            ৳0
-                                        @endif
-                                    </p>
-                                </div>
-                                <hr>
-                                <div class="hstack align-items-center justify-content-between">
-                                    <p class="mb-0">Delivery</p>
-                                    <p class="mb-0">৳29</p>
-                                </div>
-                                <hr>
-                                <div class="hstack align-items-center justify-content-between fw-bold text-dark">
-                                    <p class="mb-0">Total Amount</p>
-                                    <p class="mb-0">৳{{ $price + 29 }}</p>
-                                </div>
-
-                            </div>
-                        </div>
                     </div>
                 </div><!--end row-->
             </div>

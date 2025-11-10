@@ -12,21 +12,34 @@
         <div class="mb-3 card rounded-0">
             <div class="card-body">
                 <div class="row g-3">
-                    {{-- Category --}}
-                    <div class="col-12 col-lg-4">
+                    {{-- Service --}}
+                    <div class="col-12 col-lg-3">
                         <div class="form-floating">
-                            <select class="form-select form-select-lg rounded-0" id="category_id">
+                            <select class="form-select form-select-lg rounded-0" id="service_id">
                                 <option value="">Select</option>
-                                @foreach ($categories as $category)
-                                    <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                @foreach ($services as $service)
+                                    <option value="{{ $service->id }}">{{ $service->title }}</option>
                                 @endforeach
                             </select>
-                            <label for="category_id">Category</label>
+                            <label for="service_id">Service</label>
+                        </div>
+                    </div>
+
+                    {{-- Brand --}}
+                    <div class="col-12 col-lg-3">
+                        <div class="form-floating">
+                            <select class="form-select form-select-lg rounded-0" id="brand_id">
+                                <option value="">Select</option>
+                                @foreach ($brands as $brand)
+                                    <option value="{{ $brand->id }}">{{ $brand->name }}</option>
+                                @endforeach
+                            </select>
+                            <label for="brand_id">Brand</label>
                         </div>
                     </div>
 
                     {{-- Division --}}
-                    <div class="col-12 col-lg-4">
+                    <div class="col-12 col-lg-3">
                         <div class="form-floating">
                             <select class="form-select form-select-lg rounded-0" id="division_id" disabled>
                                 <option value="">Select</option>
@@ -36,7 +49,7 @@
                     </div>
 
                     {{-- District --}}
-                    <div class="col-12 col-lg-4">
+                    <div class="col-12 col-lg-3">
                         <div class="form-floating">
                             <select class="form-select form-select-lg rounded-0" id="district_id" disabled>
                                 <option value="">Select</option>
@@ -57,7 +70,8 @@
 
         {{-- Products --}}
         <div class="product-grid tab-content tabular-product">
-            <div id="productList" class="row row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-4 row-cols-xxl-5 g-3 g-sm-4">
+            <div id="productList"
+                class="row row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-4 row-cols-xxl-5 g-3 g-sm-4">
                 @include('frontend.pages.home.sections.partials.cards_list', ['products' => $products])
             </div>
         </div>

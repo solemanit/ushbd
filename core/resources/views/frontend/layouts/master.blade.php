@@ -33,13 +33,46 @@
 
     <title>@yield('meta_title', 'Website')</title>
     @stack('styles')
+    <style>
+        /* Floating WhatsApp button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25D366;
+            color: white;
+            border-radius: 50px;
+            padding: 12px 20px;
+            text-decoration: none;
+            font-weight: bold;
+            font-family: 'Inter', sans-serif;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            z-index: 1000;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .whatsapp-float:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .whatsapp-float i {
+            font-size: 20px;
+        }
+    </style>
 </head>
 
 <body>
     @include('frontend.layouts.partials.header')
 
     @yield('content')
-
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/15551234567" target="_blank" class="whatsapp-float">
+        <i class="bi bi-whatsapp"></i> Contact Us
+    </a>
     @include('frontend.layouts.partials.footer')
 
     <!-- Static frontend JS (from staticFiles.frontend) -->
@@ -51,7 +84,7 @@
     @vite(['resources/assets/frontend/js/main.js', 'resources/assets/frontend/js/index.js', 'resources/assets/frontend/js/loader.js'])
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script>
-        const API_BASE = '{{ rtrim(env("APP_URL"), "/") }}/api';
+        const API_BASE = '{{ rtrim(env('APP_URL'), '/') }}/api';
 
         const divisionSelect = document.getElementById('division_id');
         const districtSelect = document.getElementById('district_id');
@@ -99,7 +132,8 @@
         searchBtn.addEventListener('click', function() {
             axios.get("{{ route('cards.filter') }}", {
                     params: {
-                        category_id: document.getElementById('category_id').value,
+                        brand_id: document.getElementById('brand_id').value,
+                        service_id: document.getElementById('service_id').value,
                         division_id: divisionSelect.value,
                         district_id: districtSelect.value
                     }
@@ -114,6 +148,7 @@
         });
     </script>
     @stack('scripts')
+
 </body>
 
 </html>

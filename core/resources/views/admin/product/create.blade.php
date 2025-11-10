@@ -15,93 +15,88 @@
                                 <h3 class="card-title">Post Details</h3>
                             </div>
                             <div class="card-body">
-                                    <div class="row">
-                                        {{-- Category --}}
-                                        <div class="mt-3 col-md-4">
-                                            <label for="category_id" class="form-label">Category:</label>
-                                            <select name="category_id"
-                                                class="form-select @error('category_id') is-invalid @enderror">
-                                                <option value="">Select Category</option>
-                                                @foreach ($categories as $category)
-                                                    <option value="{{ $category->id }}"
-                                                        {{ old('category_id', $product->category_id ?? '') == $category->id ? 'selected' : '' }}>
-                                                        {{ $category->name }}
-                                                    </option>
-                                                @endforeach
-                                            </select>
-                                            @error('category_id')
-                                                <div class="invalid-feedback">{{ $message }}</div>
-                                            @enderror
-                                        </div>
+                                <div class="row">
 
-                                        <!-- Division -->
-                                        <div class="mt-3 col-md-4">
-                                            <label for="division_id" class="form-label">Division:</label>
-                                            <select id="division_id" name="division_id"
-                                                class="form-select @error('division_id') is-invalid @enderror">
-                                                <option value="">Loading divisions...</option>
-                                            </select>
-                                            @error('division_id')
-                                                <div class="invalid-feedback">{{ $message }}</div>
-                                            @enderror
-                                        </div>
-
-                                        <!-- District -->
-                                        <div class="mt-3 col-md-4">
-                                            <label for="district_id" class="form-label">District:</label>
-                                            <select id="district_id" name="district_id"
-                                                class="form-select @error('district_id') is-invalid @enderror" disabled>
-                                                <option value="">Select District</option>
-                                            </select>
-                                            @error('district_id')
-                                                <div class="invalid-feedback">{{ $message }}</div>
-                                            @enderror
-                                        </div>
-                                    </div>
-
-                                    {{-- Product Name --}}
-                                    <div class="mt-3">
-                                        <label for="name" class="form-label">Product Name:</label>
-                                        <input type="text" id="name" name="name"
-                                            class="form-control @error('name') is-invalid @enderror"
-                                            value="{{ old('name') }}" placeholder="Enter product name">
-                                        @error('name')
+                                    {{-- Service --}}
+                                    <div class="mt-3 col-md-6">
+                                        <label for="service_id" class="form-label">Service:</label>
+                                        <select name="service_id"
+                                            class="form-select @error('service_id') is-invalid @enderror">
+                                            <option value="">Select Service</option>
+                                            @foreach ($services as $service)
+                                                <option value="{{ $service->id }}"
+                                                    {{ old('service_id', $product->service_id ?? '') == $service->id ? 'selected' : '' }}>
+                                                    {{ $service->title }}
+                                                </option>
+                                            @endforeach
+                                        </select>
+                                        @error('service_id')
                                             <div class="invalid-feedback">{{ $message }}</div>
                                         @enderror
                                     </div>
 
-                                    <div class="mt-3">
-                                        <label for="description" class="form-label">Product Description:</label>
-                                        <textarea id="editor" name="description" class="form-control @error('description') is-invalid @enderror"
-                                            placeholder="Enter product description">{{ old('description') }}</textarea>
-                                        @error('description')
+                                    {{-- Brand --}}
+                                    <div class="mt-3 col-md-6">
+                                        <label for="brand_id" class="form-label">Brand:</label>
+                                        <select name="brand_id" class="form-select @error('brand_id') is-invalid @enderror">
+                                            <option value="">Select Brand</option>
+                                            @foreach ($brands as $brand)
+                                                <option value="{{ $brand->id }}"
+                                                    {{ old('brand_id', $product->brand_id ?? '') == $brand->id ? 'selected' : '' }}>
+                                                    {{ $brand->name }}
+                                                </option>
+                                            @endforeach
+                                        </select>
+                                        @error('brand_id')
                                             <div class="invalid-feedback">{{ $message }}</div>
                                         @enderror
                                     </div>
 
-                                    <div class="row">
-                                        {{-- Price --}}
-                                        <div class="mt-3 col-md-6">
-                                            <label for="price" class="form-label">Price (BDT):</label>
-                                            <input type="number" id="price" name="price"
-                                                class="form-control @error('price') is-invalid @enderror"
-                                                value="{{ old('price') }}" placeholder="Enter product price">
-                                            @error('price')
-                                                <div class="invalid-feedback">{{ $message }}</div>
-                                            @enderror
-                                        </div>
 
-                                        {{-- Discount --}}
-                                        <div class="mt-3 col-md-6">
-                                            <label for="discount" class="form-label">Discount (BDT):</label>
-                                            <input type="number" id="discount" name="discount"
-                                                class="form-control @error('discount') is-invalid @enderror"
-                                                value="{{ old('discount', 0) }}" placeholder="Enter discount">
-                                            @error('discount')
-                                                <div class="invalid-feedback">{{ $message }}</div>
-                                            @enderror
-                                        </div>
+                                    <!-- Division -->
+                                    <div class="mt-3 col-md-6">
+                                        <label for="division_id" class="form-label">Division:</label>
+                                        <select id="division_id" name="division_id"
+                                            class="form-select @error('division_id') is-invalid @enderror">
+                                            <option value="">Loading divisions...</option>
+                                        </select>
+                                        @error('division_id')
+                                            <div class="invalid-feedback">{{ $message }}</div>
+                                        @enderror
                                     </div>
+
+                                    <!-- District -->
+                                    <div class="mt-3 col-md-6">
+                                        <label for="district_id" class="form-label">District:</label>
+                                        <select id="district_id" name="district_id"
+                                            class="form-select @error('district_id') is-invalid @enderror" disabled>
+                                            <option value="">Select District</option>
+                                        </select>
+                                        @error('district_id')
+                                            <div class="invalid-feedback">{{ $message }}</div>
+                                        @enderror
+                                    </div>
+                                </div>
+
+                                {{-- Product Name --}}
+                                <div class="mt-3">
+                                    <label for="name" class="form-label">Product Name:</label>
+                                    <input type="text" id="name" name="name"
+                                        class="form-control @error('name') is-invalid @enderror"
+                                        value="{{ old('name') }}" placeholder="Enter product name">
+                                    @error('name')
+                                        <div class="invalid-feedback">{{ $message }}</div>
+                                    @enderror
+                                </div>
+
+                                <div class="mt-3">
+                                    <label for="description" class="form-label">Product Description:</label>
+                                    <textarea id="editor" name="description" class="form-control @error('description') is-invalid @enderror"
+                                        placeholder="Enter product description">{{ old('description') }}</textarea>
+                                    @error('description')
+                                        <div class="invalid-feedback">{{ $message }}</div>
+                                    @enderror
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -117,8 +112,8 @@
                                 {{-- Image Preview --}}
                                 <div class="mb-3 text-center">
                                     <label class="form-label d-block">Preview</label>
-                                    <img id="imagePreview" src="{{ asset('images/placeholder-image.webp') }}" alt="Thumbnail"
-                                        class="mb-3 rounded img-fluid" style="max-height:200px;">
+                                    <img id="imagePreview" src="{{ asset('images/placeholder-image.webp') }}"
+                                        alt="Thumbnail" class="mb-3 rounded img-fluid" style="max-height:200px;">
                                 </div>
 
                                 {{-- Upload Thumbnail --}}
@@ -136,7 +131,8 @@
                                     <label class="form-label">Publish Status</label>
                                     <select name="status" class="form-select @error('status') is-invalid @enderror">
                                         <option value="">Select Status</option>
-                                        <option selected value="1" {{ old('status') == '1' ? 'selected' : '' }}>Active
+                                        <option selected value="1" {{ old('status') == '1' ? 'selected' : '' }}>
+                                            Active
                                         </option>
                                         <option value="0" {{ old('status') == '0' ? 'selected' : '' }}>Inactive
                                         </option>
@@ -170,7 +166,7 @@
 
 @push('scripts')
     <script>
-        const API_BASE = '{{ rtrim(env("APP_URL"), "/") }}/api';
+        const API_BASE = '{{ rtrim(env('APP_URL'), '/') }}/api';
 
         const divisionSelect = document.getElementById('division_id');
         const districtSelect = document.getElementById('district_id');

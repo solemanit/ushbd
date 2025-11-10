@@ -1,6 +1,6 @@
 @extends('admin.layouts.master')
 
-@section('title', 'Edit Banner | UpSkill Academia')
+@section('title', 'Edit Banner | USHBD')
 
 @section('content')
 <div class="mt-5 container-xl">

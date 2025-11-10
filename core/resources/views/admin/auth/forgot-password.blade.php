@@ -1,6 +1,6 @@
 @extends('admin.layouts.master')
 
-@section('title', 'Forgot Password | UpSkill Academia')
+@section('title', 'Forgot Password | USHBD')
 
 @section('content')
 <div class="page page-center">

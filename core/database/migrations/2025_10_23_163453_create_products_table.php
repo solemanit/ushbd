@@ -10,15 +10,14 @@ return new class extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('category_id')->constrained()->onDelete('cascade');
+            $table->foreignId('service_id')->nullable()->constrained('services')->onDelete('set null');
+            $table->foreignId('brand_id')->nullable()->constrained('brands')->onDelete('set null');
             $table->unsignedBigInteger('division_id')->nullable();
             $table->unsignedBigInteger('district_id')->nullable();
             $table->string('name');
             $table->longText('description')->nullable();
             $table->string('slug')->unique();
             $table->string('image')->nullable();
-            $table->unsignedInteger('price');
-            $table->unsignedInteger('discount')->default(0);
             $table->boolean('status')->default(true);
             $table->timestamps();
         });

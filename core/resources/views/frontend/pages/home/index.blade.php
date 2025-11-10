@@ -48,7 +48,7 @@
             </div>
         </section>
 
-        @include('frontend.pages.home.sections.categories')
+        @include('frontend.pages.home.sections.services')
 
         @include('frontend.pages.home.sections.cards')
     </div>

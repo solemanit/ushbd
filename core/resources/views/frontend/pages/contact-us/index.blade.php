@@ -43,50 +43,7 @@
                 @endif
 
                 <div class="row g-4">
-                    <div class="col-xl-8">
-                        <div class="p-4 border">
-                            <form action="{{ route('contact.send') }}" method="POST">
-                                @csrf
-
-                                <h4 class="mb-0 fw-bold">Drop Us a Line</h4>
-                                <div class="my-3 border-bottom"></div>
-
-                                <div class="mb-3">
-                                    <label class="form-label">First Name</label>
-                                    <input type="text" name="firstName" class="form-control rounded-0" required>
-                                </div>
-
-                                <div class="mb-3">
-                                    <label class="form-label">Last Name</label>
-                                    <input type="text" name="lastName" class="form-control rounded-0" required>
-                                </div>
-
-                                <div class="mb-3">
-                                    <label class="form-label">Email</label>
-                                    <input type="email" name="email" class="form-control rounded-0" required>
-                                </div>
-
-                                <div class="mb-3">
-                                    <label class="form-label">Phone (Optional)</label>
-                                    <input type="text" name="phone" class="form-control rounded-0">
-                                </div>
-
-                                <div class="mb-3">
-                                    <label class="form-label">Subject</label>
-                                    <input type="text" name="subject" class="form-control rounded-0" required>
-                                </div>
-
-                                <div class="mb-3">
-                                    <label class="form-label">Message</label>
-                                    <textarea name="body" class="form-control rounded-0" rows="4" required></textarea>
-                                </div>
-
-                                <button type="submit" class="btn btn-dark btn-ecomm">Send Message</button>
-                            </form>
-
-                        </div>
-                    </div>
-                    <div class="col-xl-4">
+                    <div class="col-xl-12">
                         <div class="p-3 border">
 
                             <div class="mb-3 address">

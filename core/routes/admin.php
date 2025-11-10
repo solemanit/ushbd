@@ -4,11 +4,13 @@ use App\Http\Controllers\Admin\{
     AdminController,
     AdminOrderController,
     BannerController,
-    CategoryController,
+    BrandController,
+    CardVariantController,
     ContactUsController,
     DashboardController,
     PageController,
-    ProductController
+    ProductController,
+    ServiceController
 };
 use App\Http\Controllers\Admin\Auth\{
     AuthenticatedSessionController,
@@ -94,14 +96,16 @@ Route::group([
         ->name('dashboard');
 
     Route::resource('banners', BannerController::class);
-    Route::resource('categories', CategoryController::class);
+    Route::resource('brands', BrandController::class);
     // Products
     Route::resource('products', ProductController::class);
+    Route::resource('services', ServiceController::class);
 
     Route::get('/orders', [AdminOrderController::class, 'index'])->name('orders.index');
     Route::get('/orders/{order}', [AdminOrderController::class, 'show'])->name('orders.show');
 
     Route::resource('pages', PageController::class)->except(['show']);
     Route::resource('contact', ContactUsController::class);
+    Route::resource('card-variants', CardVariantController::class);
 
 });

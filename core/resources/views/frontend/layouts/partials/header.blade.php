@@ -1,7 +1,6 @@
   <header class="top-header">
       <nav class="container gap-3 navbar navbar-expand-xl w-100 navbar-dark">
-          <a class="navbar-brand d-none d-xl-inline" href="{{ url('/') }}"><img src="{{ asset('images/ushbd.png') }}"
-                  class="logo-img"></a>
+          <a class="navbar-brand " href="{{ url('/') }}"><img src="{{ asset('images/ushbd.png') }}" class="logo-img"></a>
           <a class="mobile-menu-btn d-inline d-xl-none" href="javascript:;" data-bs-toggle="offcanvas"
               data-bs-target="#offcanvasNavbar">
               <i class="bi bi-list"></i>
@@ -41,14 +40,5 @@
               </div>
 
           </div>
-          <ul class="flex-row navbar-nav secondary-menu">
-              <li class="nav-item">
-                  <a class="nav-link dark-mode-icon" href="javascript:;">
-                      <div class="mode-icon">
-                          <i class="bi bi-moon"></i>
-                      </div>
-                  </a>
-              </li>
-          </ul>
       </nav>
   </header>

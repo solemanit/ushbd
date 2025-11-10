@@ -1,27 +1,27 @@
 @extends('admin.layouts.master')
 
-@section('title', 'Add New Category | UpSkill Academia')
+@section('title', 'Add New Service | USHBD')
 
 @section('content')
 <div class="mt-5 container-xl">
     <div class="card">
-        <div class="card-header"><h3>Add New Category</h3></div>
+        <div class="card-header"><h3>Add New Service</h3></div>
         <div class="card-body">
-            <form method="POST" action="{{ route('admin.categories.store') }}" enctype="multipart/form-data">
+            <form method="POST" action="{{ route('admin.services.store') }}" enctype="multipart/form-data">
                 @csrf
 
                 <div class="mt-3">
-                    <label for="name" class="form-label">Category Name:</label>
-                    <input type="text" id="name" name="name"
-                        class="form-control @error('name') is-invalid @enderror"
-                        value="{{ old('name') }}" placeholder="Enter category name">
-                    @error('name')
+                    <label for="title" class="form-label">Service Title:</label>
+                    <input type="text" id="title" name="title"
+                        class="form-control @error('title') is-invalid @enderror"
+                        value="{{ old('title') }}" placeholder="Enter service title">
+                    @error('title')
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
                 </div>
 
                 <div class="mt-3">
-                    <label for="image" class="form-label">Category Image:</label>
+                    <label for="image" class="form-label">Service Image:</label>
                     <input type="file" id="image" name="image"
                         class="form-control @error('image') is-invalid @enderror">
                     @error('image')
@@ -36,7 +36,8 @@
                         class="icon icon-tabler icon-tabler-check">
                         <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                         <path d="M5 12l5 5l10 -10" />
-                    </svg> Create Category
+                    </svg>
+                    Create Service
                 </button>
             </form>
         </div>

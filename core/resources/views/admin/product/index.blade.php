@@ -1,6 +1,6 @@
 @extends('admin.layouts.master')
 
-@section('title', 'Products | UpSkill Academia')
+@section('title', 'Products | USHBD')
 
 @section('content')
 <div class="page-header d-print-none" aria-label="Page header">
@@ -75,11 +75,10 @@
                                     <thead>
                                         <tr>
                                             <th><button class="table-sort d-flex justify-content-between w-100" data-sort="sort-name">Name</button></th>
-                                            <th>Category</th>
+                                            <th>Brand</th>
+                                            <th>Service</th>
                                             <th>Division</th>
                                             <th>District</th>
-                                            <th>Price</th>
-                                            <th>Discount</th>
                                             <th>Image</th>
                                             <th><button class="table-sort d-flex justify-content-between w-100" data-sort="sort-date">Created Date</button></th>
                                             <th>Action</th>
@@ -90,11 +89,10 @@
                                         @foreach ($products as $product)
                                             <tr data-division-id="{{ $product->division_id }}" data-district-id="{{ $product->district_id }}">
                                                 <td class="sort-name">{{ $product->name }}</td>
-                                                <td>{{ $product->category->name ?? '-' }}</td>
+                                                <td>{{ $product->brand->name ?? '-' }}</td>
+                                                <td>{{ $product->service->title ?? '-' }}</td>
                                                 <td class="division-name">Loading...</td>
                                                 <td class="district-name">Loading...</td>
-                                                <td>{{ $product->formatted_price }}</td>
-                                                <td>{{ $product->formatted_discount }}</td>
                                                 <td>
                                                     @if($product->image)
                                                         <img src="{{ asset('storage/' . $product->image) }}"

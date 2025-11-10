@@ -1,28 +1,30 @@
 @extends('admin.layouts.master')
 
-@section('title', 'Add New Banner | USHBD')
+@section('title', 'Edit Card Variant | USHBD')
 
 @section('content')
 <div class="mt-5 container-xl">
     <div class="card">
-        <div class="card-header"><h3>Add New Banner</h3></div>
+        <div class="card-header"><h3>Edit Card Variant</h3></div>
         <div class="card-body">
-            <form method="POST" action="{{ route('admin.banners.store') }}" enctype="multipart/form-data">
+            <form method="POST" action="{{ route('admin.card-variants.update', $cardVariant->id) }}">
                 @csrf
+                @method('PUT')
 
                 <div class="mt-3">
-                    <label for="title" class="form-label">Banner Title:</label>
-                    <input type="text" id="title" name="title" class="form-control @error('title') is-invalid @enderror"
-                        value="{{ old('title') }}" placeholder="Enter banner title">
-                    @error('title')
+                    <label for="name" class="form-label">Variant Name:</label>
+                    <input type="text" id="name" name="name" class="form-control @error('name') is-invalid @enderror"
+                        value="{{ old('name', $cardVariant->name) }}" placeholder="Enter variant name">
+                    @error('name')
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
                 </div>
 
                 <div class="mt-3">
-                    <label for="banner" class="form-label">Banner Image:</label>
-                    <input type="file" id="banner" name="banner" class="form-control @error('banner') is-invalid @enderror">
-                    @error('banner')
+                    <label for="description" class="form-label">Description:</label>
+                    <textarea id="description" name="description" class="form-control @error('description') is-invalid @enderror"
+                        placeholder="Enter variant description">{{ old('description', $cardVariant->description) }}</textarea>
+                    @error('description')
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
                 </div>
@@ -34,7 +36,7 @@
                         class="icon icon-tabler icon-tabler-check">
                         <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                         <path d="M5 12l5 5l10 -10" />
-                    </svg> Create Banner
+                    </svg> Update Card Variant
                 </button>
             </form>
         </div>

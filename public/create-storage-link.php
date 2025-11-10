@@ -4,7 +4,7 @@
 // After success - delete this file for security.
 
 // CONFIG: adjust if your storage path differs
-$target = '/home/universa/ushbd-app/storage/app/public'; // real storage (Laravel default)
+$target = '/home/u799453710/domains/universalservicehubbd.com/public_html/core/storage/app/public'; // real storage (Laravel default)
 $link   = __DIR__ . '/storage'; // will be public_html/storage
 
 header('Content-Type: text/plain; charset=utf-8');

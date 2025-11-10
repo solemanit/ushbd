@@ -7,7 +7,7 @@
         <section class="py-3 border-bottom border-top d-none d-md-flex bg-light">
             <div class="container">
                 <div class="page-breadcrumb d-flex align-items-center">
-                    <h3 class="breadcrumb-title pe-3">Deatils</h3>
+                    <h3 class="breadcrumb-title pe-3">Card Deatils</h3>
                     <div class="ms-auto">
                         <nav aria-label="breadcrumb">
                             <ol class="p-0 mb-0 breadcrumb">
@@ -41,43 +41,23 @@
                     <div class="col-12 col-xl-5">
                         <div class="product-info">
                             <h4 class="mb-1 product-title fw-bold">{{ $product->name }}</h4>
-                            <p class="mb-0"><strong>Category:</strong> {{ $product->category->name ?? '' }} |
-                                <strong>Division:</strong> {{ $division ?? 'N/A' }} | <strong>District:</strong>
-                                {{ $district ?? 'N/A' }}</p>
+                            <p class="mb-0">
+                                <strong>Service:</strong> {{ $product->service ? $product->service->title : 'No Service' }} |
+                                <strong>Brand:</strong> {{ $product->brand ? $product->brand->name : 'No Brand' }}
                             <hr>
-                            <div class="gap-3 product-price d-flex align-items-center">
-
-                                @if ($product->discount > 0)
-                                    <div class="h4 fw-bold">৳{{ $product->price - $product->discount }}</div>
-                                    <div class="h5 fw-light text-muted text-decoration-line-through">৳{{ $product->price }}
-                                    </div>
-
-                                    @php
-                                        $percent = round(($product->discount / $product->price) * 100);
-                                    @endphp
-
-                                    <div class="h4 fw-bold text-danger">({{ $percent }}% off)</div>
-                                @else
-                                    <div class="h4 fw-bold">৳{{ $product->price }}</div>
-                                @endif
-
-                            </div>
-
-
                             <div class="mt-3 cart-buttons">
                                 <div class="gap-3 mt-4 buttons d-flex flex-column flex-lg-row">
                                     <a href="{{ route('checkout.page', $product->id) }}"
                                         class="px-5 py-3 btn btn-lg btn-dark btn-ecomm col-lg-6"><i
-                                            class="bi bi-basket2 me-2"></i>Buy</a>
+                                            class="bi bi-basket2 me-2"></i>Order Now</a>
                                 </div>
                             </div>
-                            <hr class="my-3">
-                            <div class="product-info">
-                                <h6 class="mb-3 fw-bold">Discount Card Details</h6>
-                                {!! $product->description !!}
-                            </div>
-                        </div>
+                </div>
                     </div>
+                </div>
+                <div class="product-info">
+                    <h5 class="mt-4 mb-3 fw-bold">Discount Card Details</h5>
+                    {!! $product->description !!}
                 </div><!--end row-->
             </div>
         </section>
