@@ -12,7 +12,8 @@
                 <div class="px-0" style="background: #f9f9f9;padding: 10px;padding-bottom: 0;">
                     <div style="margin-left: 20px;">
                         <p class="mb-1 product-short-name">{{ $product->brand->name ?? '' }} | {{ $product->service->title ?? '' }}</p>
-                        <h6 class="mb-0 fw-bold product-short-title">{{ $product->name }}</h6>
+                        <h6 class="mb-2 fw-bold product-short-title">{{ $product->name }}</h6>
+                        <div class="h6 fw-bold text-danger">({{ $product->discount ?? 0 }}% off)</div>
                     </div>
                     <a href="{{ route('card.view', $product->slug) }}" class="mt-3 btn btn-dark btn-ecomm">View Deatils</a>
                 </div>

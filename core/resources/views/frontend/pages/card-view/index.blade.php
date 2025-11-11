@@ -25,34 +25,31 @@
             <div class="container">
                 <div class="row g-4">
                     <div class="col-12 col-xl-7">
-                        <div class="product-images">
-                            <div class="product-zoom-images">
-                                <div class="row row-cols-2 g-3">
-                                    <div class="col">
-                                        <div class="overflow-hidden img-thumb-container position-relative"
-                                            data-fancybox="gallery" data-src="{{ asset('storage/' . $product->image) }}">
-                                            <img src="{{ asset('storage/' . $product->image) }}" class="rounded img-fluid">
-                                        </div>
-                                    </div>
-                                </div><!--end row-->
-                            </div>
-                        </div>
+                        <img src="{{ asset('storage/' . $product->image) }}" class="rounded img-fluid">
                     </div>
                     <div class="col-12 col-xl-5">
                         <div class="product-info">
                             <h4 class="mb-1 product-title fw-bold">{{ $product->name }}</h4>
                             <p class="mb-0">
-                                <strong>Service:</strong> {{ $product->service ? $product->service->title : 'No Service' }} |
-                                <strong>Brand:</strong> {{ $product->brand ? $product->brand->name : 'No Brand' }}
-                            <hr>
+                                <strong>Service:</strong> {{ $product->service ? $product->service->title : 'No Service' }}
+                                |
+                                <strong>Brand:</strong> {{ $product->brand ? $product->brand->name : 'No Brand' }} |
+                                <strong>Discount:</strong> {{ $product->discount . '%' ?? 'No Discount' }}
+                                <hr>
                             <div class="mt-3 cart-buttons">
                                 <div class="gap-3 mt-4 buttons d-flex flex-column flex-lg-row">
-                                    <a href="{{ route('checkout.page', $product->id) }}"
-                                        class="px-5 py-3 btn btn-lg btn-dark btn-ecomm col-lg-6"><i
-                                            class="bi bi-basket2 me-2"></i>Order Now</a>
+
+                                    {{-- WhatsApp Order --}}
+                                    <a href="https://wa.me/15551234567"
+                                        target="_blank"
+                                        class="px-5 py-3 btn btn-lg btn-success btn-ecomm col-lg-6 whatsapp-btn">
+                                        <i class="bi bi-whatsapp me-2"></i>Order via WhatsApp
+                                    </a>
+
                                 </div>
                             </div>
-                </div>
+
+                        </div>
                     </div>
                 </div>
                 <div class="product-info">

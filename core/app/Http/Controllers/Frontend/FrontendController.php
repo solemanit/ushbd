@@ -25,9 +25,19 @@ class FrontendController extends Controller
 
     public function show($slug)
     {
-        $category = Service::where('slug', $slug)->firstOrFail();
-        return view('frontend.pages.services.show', compact('service'));
+        $service = Service::where('slug', $slug)->firstOrFail();
+
+        $products = Product::with(['brand', 'service']) // relation load
+            ->where('service_id', $service->id)
+            ->where('status', 1)
+            ->latest()
+            ->get();
+
+        return view('frontend.pages.services.show', compact('service', 'products'));
     }
+
+
+
 
     // ✅ Filter Products
     public function filterCards(Request $request)

@@ -1,6 +1,7 @@
   <header class="top-header">
       <nav class="container gap-3 navbar navbar-expand-xl w-100 navbar-dark">
-          <a class="navbar-brand " href="{{ url('/') }}"><img src="{{ asset('images/ushbd.png') }}" class="logo-img"></a>
+          <a class="navbar-brand " href="{{ url('/') }}"><img src="{{ asset('images/ushbd.png') }}"
+                  class="logo-img"></a>
           <a class="mobile-menu-btn d-inline d-xl-none" href="javascript:;" data-bs-toggle="offcanvas"
               data-bs-target="#offcanvasNavbar">
               <i class="bi bi-list"></i>
@@ -18,6 +19,26 @@
                       <li class="nav-item">
                           <a class="nav-link" href="{{ route('home') }}">Home</a>
                       </li>
+                      <li class="nav-item dropdown">
+                          <a class="nav-link dropdown-toggle dropdown-toggle-nocaret" href="javascript:;"
+                              data-bs-toggle="dropdown">
+                              Services
+                          </a>
+
+                          @php
+                              $menuServices = \App\Models\Service::orderBy('title')->get();
+                          @endphp
+
+                          <ul class="dropdown-menu">
+                              @foreach ($menuServices as $service)
+                                  <li>
+                                      <a class="dropdown-item" href="{{ route('service.show', $service->slug) }}">
+                                          {{ $service->title }}
+                                      </a>
+                                  </li>
+                              @endforeach
+                          </ul>
+                      </li>
 
                       @php
                           // Admin থেকে menu_visible pages load করা
@@ -33,7 +54,7 @@
                               </a>
                           </li>
                       @endforeach
-                        <li class="nav-item">
+                      <li class="nav-item">
                           <a class="nav-link" href="{{ route('contact.index') }}">Contact Us</a>
                       </li>
                   </ul>

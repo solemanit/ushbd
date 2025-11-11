@@ -38,6 +38,7 @@ class ProductController extends Controller
             'name'         => 'required|string|max:255',
             'description'  => 'required|string',
             'image'        => 'required|image|mimes:jpg,jpeg,png,webp|max:2048',
+            'discount'     => 'required|integer',
             'status'       => 'required|in:0,1',
         ]);
 
@@ -78,6 +79,7 @@ class ProductController extends Controller
             'name'         => 'required|string|max:255',
             'description'  => 'required|string',
             'image'        => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
+            'discount'     => 'required|integer',
             'status'       => 'required|in:0,1',
         ]);
 
@@ -123,7 +125,6 @@ class ProductController extends Controller
         $manager = new ImageManager(new Driver());
 
         $resizedImage = $manager->read($image)
-            ->cover(500, 500)
             ->toWebp(80);
 
         Storage::disk('public')->put($filename, $resizedImage);

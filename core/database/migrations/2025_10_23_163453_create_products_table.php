@@ -18,6 +18,7 @@ return new class extends Migration
             $table->longText('description')->nullable();
             $table->string('slug')->unique();
             $table->string('image')->nullable();
+            $table->integer('discount')->nullable();
             $table->boolean('status')->default(true);
             $table->timestamps();
         });

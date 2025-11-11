@@ -89,6 +89,16 @@
                                     @enderror
                                 </div>
 
+                                <div class="mt-3">
+                                    <label for="discount" class="form-label">Product Discount %:</label>
+                                    <input type="text" id="discount" name="discount"
+                                        class="form-control @error('discount') is-invalid @enderror"
+                                        value="{{ old('discount', $product->discount) }}" placeholder="Enter product discount">
+                                    @error('discount')
+                                        <div class="invalid-feedback">{{ $message }}</div>
+                                    @enderror
+                                </div>
+
                                 {{-- Product Description --}}
                                 <div class="mt-3">
                                     <label for="description" class="form-label">Product Description:</label>

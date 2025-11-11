@@ -88,7 +88,15 @@
                                         <div class="invalid-feedback">{{ $message }}</div>
                                     @enderror
                                 </div>
-
+                                <div class="mt-3">
+                                    <label for="discount" class="form-label">Product Discount %:</label>
+                                    <input type="text" id="discount" name="discount"
+                                        class="form-control @error('discount') is-invalid @enderror"
+                                        value="{{ old('discount') }}" placeholder="Enter product discount">
+                                    @error('discount')
+                                        <div class="invalid-feedback">{{ $message }}</div>
+                                    @enderror
+                                </div>
                                 <div class="mt-3">
                                     <label for="description" class="form-label">Product Description:</label>
                                     <textarea id="editor" name="description" class="form-control @error('description') is-invalid @enderror"

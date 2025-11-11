@@ -80,6 +80,7 @@
                                             <th>Division</th>
                                             <th>District</th>
                                             <th>Image</th>
+                                            <th>Discount</th>
                                             <th><button class="table-sort d-flex justify-content-between w-100" data-sort="sort-date">Created Date</button></th>
                                             <th>Action</th>
                                         </tr>
@@ -103,6 +104,7 @@
                                                         <span class="text-muted">No Image</span>
                                                     @endif
                                                 </td>
+                                                <td class="sort-name">{{ $product->discount }}%</td>
                                                 <td class="sort-date">{{ $product->created_at->format('Y-m-d') }}</td>
                                                 <td>
                                                     <a href="{{ route('admin.products.edit', $product->id) }}" class="btn btn-sm btn-primary">Edit</a>

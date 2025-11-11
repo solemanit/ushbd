@@ -22,6 +22,7 @@ class Product extends Model
         'description',
         'slug',
         'image',
+        'discount',
         'status',
     ];
 

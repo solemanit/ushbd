@@ -38,8 +38,6 @@ Route::get('/clear', function () {
 
 // Frontend route
 Route::get('/', [FrontendController::class, 'index'])->name('home');
-// Single category page by slug
-Route::get('/category/{slug}', [FrontendController::class, 'show'])->name('category.show');
 
 Route::get('/page/{slug}', [PageShowController::class, 'show'])->name('page.show');
 
@@ -61,6 +59,9 @@ Route::get('/about', function () {
    return view('frontend.pages.about.index');
 })->name('about');
 
+
+Route::get('/services', [FrontendController::class, 'services'])->name('services.index');
+Route::get('/service/{slug}', [FrontendController::class, 'show'])->name('service.show');
 
 // Include other route files
 require __DIR__ . '/admin.php';
